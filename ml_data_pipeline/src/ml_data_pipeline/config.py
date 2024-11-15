@@ -12,6 +12,7 @@ class DataLoaderConfig(BaseModel):
             raise ValueError("file_type must be 'csv' or 'json'")
         return value
 
+
 class TransformationConfig(BaseModel):
     normalize: bool
     scaling_method: str
@@ -22,9 +23,21 @@ class TransformationConfig(BaseModel):
             raise ValueError("scaling_method must be 'standard' or 'minmax'")
         return value
 
+
+class ModelConfig(BaseModel):
+    type: str
+
+    @field_validator("type")
+    def validate_scaling_method(cls, value):
+        if value not in {"tree", "linear"}:
+            raise ValueError("model type must be 'linear' or 'tree'")
+        return value
+
+
 class Config(BaseModel):
     data_loader: DataLoaderConfig
     transformation: TransformationConfig
+    model: ModelConfig
 
 
 def load_config(config_path: str) -> Config:
