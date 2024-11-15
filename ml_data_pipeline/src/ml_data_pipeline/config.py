@@ -1,6 +1,6 @@
 # src/ml_data_pipeline/config.py
 from pydantic import BaseModel, field_validator
-from omegaconf import OmegaConf # type: ignore
+from omegaconf import OmegaConf
 
 class DataLoaderConfig(BaseModel):
     file_path: str
