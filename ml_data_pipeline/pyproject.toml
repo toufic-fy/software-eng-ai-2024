@@ -17,6 +17,9 @@ pydantic = "^2.9.2"
 [tool.poetry.scripts]
 ml-data-pipeline = "ml_data_pipeline.main:main"
 
+[tool.poetry.group.dev.dependencies]
+pdoc = "^15.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
