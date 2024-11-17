@@ -108,4 +108,4 @@ def load_config(config_path: str) -> Config:
     """
     raw_config = OmegaConf.load(config_path)
     config_dict = OmegaConf.to_container(raw_config, resolve=True)
-    return Config(**config_dict)
+    return Config.model_validate(config_dict)
