@@ -25,4 +25,4 @@ class LinearModel(Model):
             pd.Series: The predicted target values.
         """
         print("Predicting with Linear Model")
-        return X * 2
+        return (X * 2).sum(axis=1)
