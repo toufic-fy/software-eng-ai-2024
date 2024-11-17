@@ -19,6 +19,7 @@ ml-data-pipeline = "ml_data_pipeline.main:main"
 
 [tool.poetry.group.dev.dependencies]
 pdoc = "^15.0.0"
+mypy = "^1.13.0"
 
 [build-system]
 requires = ["poetry-core"]
