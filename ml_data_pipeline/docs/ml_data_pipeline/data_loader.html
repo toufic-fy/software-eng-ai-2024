@@ -80,8 +80,8 @@
 
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># src/ml_data_pipeline/data_loader/__init__.py</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="kn">from</span> <span class="nn">.csv_loader</span> <span class="kn">import</span> <span class="n">CSVLoader</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a><span class="kn">from</span> <span class="nn">.json_loader</span> <span class="kn">import</span> <span class="n">JSONLoader</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.factory</span> <span class="kn">import</span> <span class="n">DataLoaderFactory</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a><span class="kn">from</span> <span class="nn">.factory</span> <span class="kn">import</span> <span class="n">DataLoaderFactory</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.json_loader</span> <span class="kn">import</span> <span class="n">JSONLoader</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a>
 </span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CSVLoader&quot;</span><span class="p">,</span> <span class="s2">&quot;JSONLoader&quot;</span><span class="p">,</span> <span class="s2">&quot;DataLoaderFactory&quot;</span><span class="p">]</span>
 </span></pre></div>
@@ -99,19 +99,19 @@
 
     </div>
     <a class="headerlink" href="#CSVLoader"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVLoader-6"><a href="#CSVLoader-6"><span class="linenos"> 6</span></a><span class="k">class</span> <span class="nc">CSVLoader</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">):</span>
-</span><span id="CSVLoader-7"><a href="#CSVLoader-7"><span class="linenos"> 7</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A data loader for loading CSV files.&quot;&quot;&quot;</span>
-</span><span id="CSVLoader-8"><a href="#CSVLoader-8"><span class="linenos"> 8</span></a>
-</span><span id="CSVLoader-9"><a href="#CSVLoader-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-</span><span id="CSVLoader-10"><a href="#CSVLoader-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a CSV file.</span>
-</span><span id="CSVLoader-11"><a href="#CSVLoader-11"><span class="linenos">11</span></a>
-</span><span id="CSVLoader-12"><a href="#CSVLoader-12"><span class="linenos">12</span></a><span class="sd">        Args:</span>
-</span><span id="CSVLoader-13"><a href="#CSVLoader-13"><span class="linenos">13</span></a><span class="sd">            file_path (str): The path to the CSV file to load data from.</span>
-</span><span id="CSVLoader-14"><a href="#CSVLoader-14"><span class="linenos">14</span></a>
-</span><span id="CSVLoader-15"><a href="#CSVLoader-15"><span class="linenos">15</span></a><span class="sd">        Returns:</span>
-</span><span id="CSVLoader-16"><a href="#CSVLoader-16"><span class="linenos">16</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
-</span><span id="CSVLoader-17"><a href="#CSVLoader-17"><span class="linenos">17</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="CSVLoader-18"><a href="#CSVLoader-18"><span class="linenos">18</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVLoader-8"><a href="#CSVLoader-8"><span class="linenos"> 8</span></a><span class="k">class</span> <span class="nc">CSVLoader</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">):</span>
+</span><span id="CSVLoader-9"><a href="#CSVLoader-9"><span class="linenos"> 9</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A data loader for loading CSV files.&quot;&quot;&quot;</span>
+</span><span id="CSVLoader-10"><a href="#CSVLoader-10"><span class="linenos">10</span></a>
+</span><span id="CSVLoader-11"><a href="#CSVLoader-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="CSVLoader-12"><a href="#CSVLoader-12"><span class="linenos">12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a CSV file.</span>
+</span><span id="CSVLoader-13"><a href="#CSVLoader-13"><span class="linenos">13</span></a>
+</span><span id="CSVLoader-14"><a href="#CSVLoader-14"><span class="linenos">14</span></a><span class="sd">        Args:</span>
+</span><span id="CSVLoader-15"><a href="#CSVLoader-15"><span class="linenos">15</span></a><span class="sd">            file_path (str): The path to the CSV file to load data from.</span>
+</span><span id="CSVLoader-16"><a href="#CSVLoader-16"><span class="linenos">16</span></a>
+</span><span id="CSVLoader-17"><a href="#CSVLoader-17"><span class="linenos">17</span></a><span class="sd">        Returns:</span>
+</span><span id="CSVLoader-18"><a href="#CSVLoader-18"><span class="linenos">18</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
+</span><span id="CSVLoader-19"><a href="#CSVLoader-19"><span class="linenos">19</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="CSVLoader-20"><a href="#CSVLoader-20"><span class="linenos">20</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -130,16 +130,16 @@
 
     </div>
     <a class="headerlink" href="#CSVLoader.load_data"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVLoader.load_data-9"><a href="#CSVLoader.load_data-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-</span><span id="CSVLoader.load_data-10"><a href="#CSVLoader.load_data-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a CSV file.</span>
-</span><span id="CSVLoader.load_data-11"><a href="#CSVLoader.load_data-11"><span class="linenos">11</span></a>
-</span><span id="CSVLoader.load_data-12"><a href="#CSVLoader.load_data-12"><span class="linenos">12</span></a><span class="sd">        Args:</span>
-</span><span id="CSVLoader.load_data-13"><a href="#CSVLoader.load_data-13"><span class="linenos">13</span></a><span class="sd">            file_path (str): The path to the CSV file to load data from.</span>
-</span><span id="CSVLoader.load_data-14"><a href="#CSVLoader.load_data-14"><span class="linenos">14</span></a>
-</span><span id="CSVLoader.load_data-15"><a href="#CSVLoader.load_data-15"><span class="linenos">15</span></a><span class="sd">        Returns:</span>
-</span><span id="CSVLoader.load_data-16"><a href="#CSVLoader.load_data-16"><span class="linenos">16</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
-</span><span id="CSVLoader.load_data-17"><a href="#CSVLoader.load_data-17"><span class="linenos">17</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="CSVLoader.load_data-18"><a href="#CSVLoader.load_data-18"><span class="linenos">18</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="CSVLoader.load_data-11"><a href="#CSVLoader.load_data-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="CSVLoader.load_data-12"><a href="#CSVLoader.load_data-12"><span class="linenos">12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a CSV file.</span>
+</span><span id="CSVLoader.load_data-13"><a href="#CSVLoader.load_data-13"><span class="linenos">13</span></a>
+</span><span id="CSVLoader.load_data-14"><a href="#CSVLoader.load_data-14"><span class="linenos">14</span></a><span class="sd">        Args:</span>
+</span><span id="CSVLoader.load_data-15"><a href="#CSVLoader.load_data-15"><span class="linenos">15</span></a><span class="sd">            file_path (str): The path to the CSV file to load data from.</span>
+</span><span id="CSVLoader.load_data-16"><a href="#CSVLoader.load_data-16"><span class="linenos">16</span></a>
+</span><span id="CSVLoader.load_data-17"><a href="#CSVLoader.load_data-17"><span class="linenos">17</span></a><span class="sd">        Returns:</span>
+</span><span id="CSVLoader.load_data-18"><a href="#CSVLoader.load_data-18"><span class="linenos">18</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
+</span><span id="CSVLoader.load_data-19"><a href="#CSVLoader.load_data-19"><span class="linenos">19</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="CSVLoader.load_data-20"><a href="#CSVLoader.load_data-20"><span class="linenos">20</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -172,21 +172,21 @@
 
     </div>
     <a class="headerlink" href="#JSONLoader"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="JSONLoader-7"><a href="#JSONLoader-7"><span class="linenos"> 7</span></a><span class="k">class</span> <span class="nc">JSONLoader</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">):</span>
-</span><span id="JSONLoader-8"><a href="#JSONLoader-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A data loader for loading JSON files.&quot;&quot;&quot;</span>
-</span><span id="JSONLoader-9"><a href="#JSONLoader-9"><span class="linenos"> 9</span></a>
-</span><span id="JSONLoader-10"><a href="#JSONLoader-10"><span class="linenos">10</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-</span><span id="JSONLoader-11"><a href="#JSONLoader-11"><span class="linenos">11</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a JSON file.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="JSONLoader-10"><a href="#JSONLoader-10"><span class="linenos">10</span></a><span class="k">class</span> <span class="nc">JSONLoader</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">):</span>
+</span><span id="JSONLoader-11"><a href="#JSONLoader-11"><span class="linenos">11</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A data loader for loading JSON files.&quot;&quot;&quot;</span>
 </span><span id="JSONLoader-12"><a href="#JSONLoader-12"><span class="linenos">12</span></a>
-</span><span id="JSONLoader-13"><a href="#JSONLoader-13"><span class="linenos">13</span></a><span class="sd">        Args:</span>
-</span><span id="JSONLoader-14"><a href="#JSONLoader-14"><span class="linenos">14</span></a><span class="sd">            file_path (str): The path to the JSON file to load data from.</span>
+</span><span id="JSONLoader-13"><a href="#JSONLoader-13"><span class="linenos">13</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="JSONLoader-14"><a href="#JSONLoader-14"><span class="linenos">14</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a JSON file.</span>
 </span><span id="JSONLoader-15"><a href="#JSONLoader-15"><span class="linenos">15</span></a>
-</span><span id="JSONLoader-16"><a href="#JSONLoader-16"><span class="linenos">16</span></a><span class="sd">        Returns:</span>
-</span><span id="JSONLoader-17"><a href="#JSONLoader-17"><span class="linenos">17</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
-</span><span id="JSONLoader-18"><a href="#JSONLoader-18"><span class="linenos">18</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="JSONLoader-19"><a href="#JSONLoader-19"><span class="linenos">19</span></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span><span id="JSONLoader-20"><a href="#JSONLoader-20"><span class="linenos">20</span></a>            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span><span id="JSONLoader-21"><a href="#JSONLoader-21"><span class="linenos">21</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="JSONLoader-16"><a href="#JSONLoader-16"><span class="linenos">16</span></a><span class="sd">        Args:</span>
+</span><span id="JSONLoader-17"><a href="#JSONLoader-17"><span class="linenos">17</span></a><span class="sd">            file_path (str): The path to the JSON file to load data from.</span>
+</span><span id="JSONLoader-18"><a href="#JSONLoader-18"><span class="linenos">18</span></a>
+</span><span id="JSONLoader-19"><a href="#JSONLoader-19"><span class="linenos">19</span></a><span class="sd">        Returns:</span>
+</span><span id="JSONLoader-20"><a href="#JSONLoader-20"><span class="linenos">20</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
+</span><span id="JSONLoader-21"><a href="#JSONLoader-21"><span class="linenos">21</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="JSONLoader-22"><a href="#JSONLoader-22"><span class="linenos">22</span></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="JSONLoader-23"><a href="#JSONLoader-23"><span class="linenos">23</span></a>            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</span><span id="JSONLoader-24"><a href="#JSONLoader-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -205,18 +205,18 @@
 
     </div>
     <a class="headerlink" href="#JSONLoader.load_data"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="JSONLoader.load_data-10"><a href="#JSONLoader.load_data-10"><span class="linenos">10</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-</span><span id="JSONLoader.load_data-11"><a href="#JSONLoader.load_data-11"><span class="linenos">11</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a JSON file.</span>
-</span><span id="JSONLoader.load_data-12"><a href="#JSONLoader.load_data-12"><span class="linenos">12</span></a>
-</span><span id="JSONLoader.load_data-13"><a href="#JSONLoader.load_data-13"><span class="linenos">13</span></a><span class="sd">        Args:</span>
-</span><span id="JSONLoader.load_data-14"><a href="#JSONLoader.load_data-14"><span class="linenos">14</span></a><span class="sd">            file_path (str): The path to the JSON file to load data from.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="JSONLoader.load_data-13"><a href="#JSONLoader.load_data-13"><span class="linenos">13</span></a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</span><span id="JSONLoader.load_data-14"><a href="#JSONLoader.load_data-14"><span class="linenos">14</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads data from a JSON file.</span>
 </span><span id="JSONLoader.load_data-15"><a href="#JSONLoader.load_data-15"><span class="linenos">15</span></a>
-</span><span id="JSONLoader.load_data-16"><a href="#JSONLoader.load_data-16"><span class="linenos">16</span></a><span class="sd">        Returns:</span>
-</span><span id="JSONLoader.load_data-17"><a href="#JSONLoader.load_data-17"><span class="linenos">17</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
-</span><span id="JSONLoader.load_data-18"><a href="#JSONLoader.load_data-18"><span class="linenos">18</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="JSONLoader.load_data-19"><a href="#JSONLoader.load_data-19"><span class="linenos">19</span></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span><span id="JSONLoader.load_data-20"><a href="#JSONLoader.load_data-20"><span class="linenos">20</span></a>            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-</span><span id="JSONLoader.load_data-21"><a href="#JSONLoader.load_data-21"><span class="linenos">21</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="JSONLoader.load_data-16"><a href="#JSONLoader.load_data-16"><span class="linenos">16</span></a><span class="sd">        Args:</span>
+</span><span id="JSONLoader.load_data-17"><a href="#JSONLoader.load_data-17"><span class="linenos">17</span></a><span class="sd">            file_path (str): The path to the JSON file to load data from.</span>
+</span><span id="JSONLoader.load_data-18"><a href="#JSONLoader.load_data-18"><span class="linenos">18</span></a>
+</span><span id="JSONLoader.load_data-19"><a href="#JSONLoader.load_data-19"><span class="linenos">19</span></a><span class="sd">        Returns:</span>
+</span><span id="JSONLoader.load_data-20"><a href="#JSONLoader.load_data-20"><span class="linenos">20</span></a><span class="sd">            pd.DataFrame: The loaded data as a pandas DataFrame.</span>
+</span><span id="JSONLoader.load_data-21"><a href="#JSONLoader.load_data-21"><span class="linenos">21</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="JSONLoader.load_data-22"><a href="#JSONLoader.load_data-22"><span class="linenos">22</span></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span><span id="JSONLoader.load_data-23"><a href="#JSONLoader.load_data-23"><span class="linenos">23</span></a>            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</span><span id="JSONLoader.load_data-24"><a href="#JSONLoader.load_data-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -249,28 +249,28 @@
 
     </div>
     <a class="headerlink" href="#DataLoaderFactory"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DataLoaderFactory-7"><a href="#DataLoaderFactory-7"><span class="linenos"> 7</span></a><span class="k">class</span> <span class="nc">DataLoaderFactory</span><span class="p">:</span>
-</span><span id="DataLoaderFactory-8"><a href="#DataLoaderFactory-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Factory class to create data loader instances based on the file type.&quot;&quot;&quot;</span>
-</span><span id="DataLoaderFactory-9"><a href="#DataLoaderFactory-9"><span class="linenos"> 9</span></a>
-</span><span id="DataLoaderFactory-10"><a href="#DataLoaderFactory-10"><span class="linenos">10</span></a>    <span class="nd">@staticmethod</span>
-</span><span id="DataLoaderFactory-11"><a href="#DataLoaderFactory-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">get_data_loader</span><span class="p">(</span><span class="n">file_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
-</span><span id="DataLoaderFactory-12"><a href="#DataLoaderFactory-12"><span class="linenos">12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a data loader based on the provided file type.</span>
-</span><span id="DataLoaderFactory-13"><a href="#DataLoaderFactory-13"><span class="linenos">13</span></a>
-</span><span id="DataLoaderFactory-14"><a href="#DataLoaderFactory-14"><span class="linenos">14</span></a><span class="sd">        Args:</span>
-</span><span id="DataLoaderFactory-15"><a href="#DataLoaderFactory-15"><span class="linenos">15</span></a><span class="sd">            file_type (str): The type of file to load. Options are &quot;csv&quot; or &quot;json&quot;.</span>
-</span><span id="DataLoaderFactory-16"><a href="#DataLoaderFactory-16"><span class="linenos">16</span></a>
-</span><span id="DataLoaderFactory-17"><a href="#DataLoaderFactory-17"><span class="linenos">17</span></a><span class="sd">        Returns:</span>
-</span><span id="DataLoaderFactory-18"><a href="#DataLoaderFactory-18"><span class="linenos">18</span></a><span class="sd">            DataLoader: An instance of the requested data loader.</span>
-</span><span id="DataLoaderFactory-19"><a href="#DataLoaderFactory-19"><span class="linenos">19</span></a>
-</span><span id="DataLoaderFactory-20"><a href="#DataLoaderFactory-20"><span class="linenos">20</span></a><span class="sd">        Raises:</span>
-</span><span id="DataLoaderFactory-21"><a href="#DataLoaderFactory-21"><span class="linenos">21</span></a><span class="sd">            ValueError: If the file type is unsupported.</span>
-</span><span id="DataLoaderFactory-22"><a href="#DataLoaderFactory-22"><span class="linenos">22</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DataLoaderFactory-23"><a href="#DataLoaderFactory-23"><span class="linenos">23</span></a>        <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
-</span><span id="DataLoaderFactory-24"><a href="#DataLoaderFactory-24"><span class="linenos">24</span></a>            <span class="k">return</span> <span class="n">CSVLoader</span><span class="p">()</span>
-</span><span id="DataLoaderFactory-25"><a href="#DataLoaderFactory-25"><span class="linenos">25</span></a>        <span class="k">elif</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
-</span><span id="DataLoaderFactory-26"><a href="#DataLoaderFactory-26"><span class="linenos">26</span></a>            <span class="k">return</span> <span class="n">JSONLoader</span><span class="p">()</span>
-</span><span id="DataLoaderFactory-27"><a href="#DataLoaderFactory-27"><span class="linenos">27</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="DataLoaderFactory-28"><a href="#DataLoaderFactory-28"><span class="linenos">28</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file type: </span><span class="si">{</span><span class="n">file_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DataLoaderFactory-8"><a href="#DataLoaderFactory-8"><span class="linenos"> 8</span></a><span class="k">class</span> <span class="nc">DataLoaderFactory</span><span class="p">:</span>
+</span><span id="DataLoaderFactory-9"><a href="#DataLoaderFactory-9"><span class="linenos"> 9</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Factory class to create data loader instances based on the file type.&quot;&quot;&quot;</span>
+</span><span id="DataLoaderFactory-10"><a href="#DataLoaderFactory-10"><span class="linenos">10</span></a>
+</span><span id="DataLoaderFactory-11"><a href="#DataLoaderFactory-11"><span class="linenos">11</span></a>    <span class="nd">@staticmethod</span>
+</span><span id="DataLoaderFactory-12"><a href="#DataLoaderFactory-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="nf">get_data_loader</span><span class="p">(</span><span class="n">file_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
+</span><span id="DataLoaderFactory-13"><a href="#DataLoaderFactory-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a data loader based on the provided file type.</span>
+</span><span id="DataLoaderFactory-14"><a href="#DataLoaderFactory-14"><span class="linenos">14</span></a>
+</span><span id="DataLoaderFactory-15"><a href="#DataLoaderFactory-15"><span class="linenos">15</span></a><span class="sd">        Args:</span>
+</span><span id="DataLoaderFactory-16"><a href="#DataLoaderFactory-16"><span class="linenos">16</span></a><span class="sd">            file_type (str): The type of file to load. Options are &quot;csv&quot; or &quot;json&quot;.</span>
+</span><span id="DataLoaderFactory-17"><a href="#DataLoaderFactory-17"><span class="linenos">17</span></a>
+</span><span id="DataLoaderFactory-18"><a href="#DataLoaderFactory-18"><span class="linenos">18</span></a><span class="sd">        Returns:</span>
+</span><span id="DataLoaderFactory-19"><a href="#DataLoaderFactory-19"><span class="linenos">19</span></a><span class="sd">            DataLoader: An instance of the requested data loader.</span>
+</span><span id="DataLoaderFactory-20"><a href="#DataLoaderFactory-20"><span class="linenos">20</span></a>
+</span><span id="DataLoaderFactory-21"><a href="#DataLoaderFactory-21"><span class="linenos">21</span></a><span class="sd">        Raises:</span>
+</span><span id="DataLoaderFactory-22"><a href="#DataLoaderFactory-22"><span class="linenos">22</span></a><span class="sd">            ValueError: If the file type is unsupported.</span>
+</span><span id="DataLoaderFactory-23"><a href="#DataLoaderFactory-23"><span class="linenos">23</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DataLoaderFactory-24"><a href="#DataLoaderFactory-24"><span class="linenos">24</span></a>        <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
+</span><span id="DataLoaderFactory-25"><a href="#DataLoaderFactory-25"><span class="linenos">25</span></a>            <span class="k">return</span> <span class="n">CSVLoader</span><span class="p">()</span>
+</span><span id="DataLoaderFactory-26"><a href="#DataLoaderFactory-26"><span class="linenos">26</span></a>        <span class="k">elif</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
+</span><span id="DataLoaderFactory-27"><a href="#DataLoaderFactory-27"><span class="linenos">27</span></a>            <span class="k">return</span> <span class="n">JSONLoader</span><span class="p">()</span>
+</span><span id="DataLoaderFactory-28"><a href="#DataLoaderFactory-28"><span class="linenos">28</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="DataLoaderFactory-29"><a href="#DataLoaderFactory-29"><span class="linenos">29</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file type: </span><span class="si">{</span><span class="n">file_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -290,25 +290,25 @@
 
     </div>
     <a class="headerlink" href="#DataLoaderFactory.get_data_loader"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DataLoaderFactory.get_data_loader-10"><a href="#DataLoaderFactory.get_data_loader-10"><span class="linenos">10</span></a>    <span class="nd">@staticmethod</span>
-</span><span id="DataLoaderFactory.get_data_loader-11"><a href="#DataLoaderFactory.get_data_loader-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">get_data_loader</span><span class="p">(</span><span class="n">file_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
-</span><span id="DataLoaderFactory.get_data_loader-12"><a href="#DataLoaderFactory.get_data_loader-12"><span class="linenos">12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a data loader based on the provided file type.</span>
-</span><span id="DataLoaderFactory.get_data_loader-13"><a href="#DataLoaderFactory.get_data_loader-13"><span class="linenos">13</span></a>
-</span><span id="DataLoaderFactory.get_data_loader-14"><a href="#DataLoaderFactory.get_data_loader-14"><span class="linenos">14</span></a><span class="sd">        Args:</span>
-</span><span id="DataLoaderFactory.get_data_loader-15"><a href="#DataLoaderFactory.get_data_loader-15"><span class="linenos">15</span></a><span class="sd">            file_type (str): The type of file to load. Options are &quot;csv&quot; or &quot;json&quot;.</span>
-</span><span id="DataLoaderFactory.get_data_loader-16"><a href="#DataLoaderFactory.get_data_loader-16"><span class="linenos">16</span></a>
-</span><span id="DataLoaderFactory.get_data_loader-17"><a href="#DataLoaderFactory.get_data_loader-17"><span class="linenos">17</span></a><span class="sd">        Returns:</span>
-</span><span id="DataLoaderFactory.get_data_loader-18"><a href="#DataLoaderFactory.get_data_loader-18"><span class="linenos">18</span></a><span class="sd">            DataLoader: An instance of the requested data loader.</span>
-</span><span id="DataLoaderFactory.get_data_loader-19"><a href="#DataLoaderFactory.get_data_loader-19"><span class="linenos">19</span></a>
-</span><span id="DataLoaderFactory.get_data_loader-20"><a href="#DataLoaderFactory.get_data_loader-20"><span class="linenos">20</span></a><span class="sd">        Raises:</span>
-</span><span id="DataLoaderFactory.get_data_loader-21"><a href="#DataLoaderFactory.get_data_loader-21"><span class="linenos">21</span></a><span class="sd">            ValueError: If the file type is unsupported.</span>
-</span><span id="DataLoaderFactory.get_data_loader-22"><a href="#DataLoaderFactory.get_data_loader-22"><span class="linenos">22</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DataLoaderFactory.get_data_loader-23"><a href="#DataLoaderFactory.get_data_loader-23"><span class="linenos">23</span></a>        <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
-</span><span id="DataLoaderFactory.get_data_loader-24"><a href="#DataLoaderFactory.get_data_loader-24"><span class="linenos">24</span></a>            <span class="k">return</span> <span class="n">CSVLoader</span><span class="p">()</span>
-</span><span id="DataLoaderFactory.get_data_loader-25"><a href="#DataLoaderFactory.get_data_loader-25"><span class="linenos">25</span></a>        <span class="k">elif</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
-</span><span id="DataLoaderFactory.get_data_loader-26"><a href="#DataLoaderFactory.get_data_loader-26"><span class="linenos">26</span></a>            <span class="k">return</span> <span class="n">JSONLoader</span><span class="p">()</span>
-</span><span id="DataLoaderFactory.get_data_loader-27"><a href="#DataLoaderFactory.get_data_loader-27"><span class="linenos">27</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="DataLoaderFactory.get_data_loader-28"><a href="#DataLoaderFactory.get_data_loader-28"><span class="linenos">28</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file type: </span><span class="si">{</span><span class="n">file_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DataLoaderFactory.get_data_loader-11"><a href="#DataLoaderFactory.get_data_loader-11"><span class="linenos">11</span></a>    <span class="nd">@staticmethod</span>
+</span><span id="DataLoaderFactory.get_data_loader-12"><a href="#DataLoaderFactory.get_data_loader-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="nf">get_data_loader</span><span class="p">(</span><span class="n">file_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
+</span><span id="DataLoaderFactory.get_data_loader-13"><a href="#DataLoaderFactory.get_data_loader-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a data loader based on the provided file type.</span>
+</span><span id="DataLoaderFactory.get_data_loader-14"><a href="#DataLoaderFactory.get_data_loader-14"><span class="linenos">14</span></a>
+</span><span id="DataLoaderFactory.get_data_loader-15"><a href="#DataLoaderFactory.get_data_loader-15"><span class="linenos">15</span></a><span class="sd">        Args:</span>
+</span><span id="DataLoaderFactory.get_data_loader-16"><a href="#DataLoaderFactory.get_data_loader-16"><span class="linenos">16</span></a><span class="sd">            file_type (str): The type of file to load. Options are &quot;csv&quot; or &quot;json&quot;.</span>
+</span><span id="DataLoaderFactory.get_data_loader-17"><a href="#DataLoaderFactory.get_data_loader-17"><span class="linenos">17</span></a>
+</span><span id="DataLoaderFactory.get_data_loader-18"><a href="#DataLoaderFactory.get_data_loader-18"><span class="linenos">18</span></a><span class="sd">        Returns:</span>
+</span><span id="DataLoaderFactory.get_data_loader-19"><a href="#DataLoaderFactory.get_data_loader-19"><span class="linenos">19</span></a><span class="sd">            DataLoader: An instance of the requested data loader.</span>
+</span><span id="DataLoaderFactory.get_data_loader-20"><a href="#DataLoaderFactory.get_data_loader-20"><span class="linenos">20</span></a>
+</span><span id="DataLoaderFactory.get_data_loader-21"><a href="#DataLoaderFactory.get_data_loader-21"><span class="linenos">21</span></a><span class="sd">        Raises:</span>
+</span><span id="DataLoaderFactory.get_data_loader-22"><a href="#DataLoaderFactory.get_data_loader-22"><span class="linenos">22</span></a><span class="sd">            ValueError: If the file type is unsupported.</span>
+</span><span id="DataLoaderFactory.get_data_loader-23"><a href="#DataLoaderFactory.get_data_loader-23"><span class="linenos">23</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DataLoaderFactory.get_data_loader-24"><a href="#DataLoaderFactory.get_data_loader-24"><span class="linenos">24</span></a>        <span class="k">if</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;csv&quot;</span><span class="p">:</span>
+</span><span id="DataLoaderFactory.get_data_loader-25"><a href="#DataLoaderFactory.get_data_loader-25"><span class="linenos">25</span></a>            <span class="k">return</span> <span class="n">CSVLoader</span><span class="p">()</span>
+</span><span id="DataLoaderFactory.get_data_loader-26"><a href="#DataLoaderFactory.get_data_loader-26"><span class="linenos">26</span></a>        <span class="k">elif</span> <span class="n">file_type</span> <span class="o">==</span> <span class="s2">&quot;json&quot;</span><span class="p">:</span>
+</span><span id="DataLoaderFactory.get_data_loader-27"><a href="#DataLoaderFactory.get_data_loader-27"><span class="linenos">27</span></a>            <span class="k">return</span> <span class="n">JSONLoader</span><span class="p">()</span>
+</span><span id="DataLoaderFactory.get_data_loader-28"><a href="#DataLoaderFactory.get_data_loader-28"><span class="linenos">28</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="DataLoaderFactory.get_data_loader-29"><a href="#DataLoaderFactory.get_data_loader-29"><span class="linenos">29</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported file type: </span><span class="si">{</span><span class="n">file_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 

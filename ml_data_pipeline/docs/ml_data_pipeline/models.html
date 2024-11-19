@@ -91,9 +91,9 @@
                         <label class="view-source-button" for="mod-models-view-source"><span>View Source</span></label>
 
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># src/ml_data_pipeline/model/__init__.py</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="kn">from</span> <span class="nn">.linear_model</span> <span class="kn">import</span> <span class="n">LinearModel</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a><span class="kn">from</span> <span class="nn">.tree_model</span> <span class="kn">import</span> <span class="n">DecisionTreeModel</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.factory</span> <span class="kn">import</span> <span class="n">ModelFactory</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="kn">from</span> <span class="nn">.factory</span> <span class="kn">import</span> <span class="n">ModelFactory</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a><span class="kn">from</span> <span class="nn">.linear_model</span> <span class="kn">import</span> <span class="n">LinearModel</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.tree_model</span> <span class="kn">import</span> <span class="n">DecisionTreeModel</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a>
 </span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LinearModel&quot;</span><span class="p">,</span> <span class="s2">&quot;DecisionTreeModel&quot;</span><span class="p">,</span> <span class="s2">&quot;ModelFactory&quot;</span><span class="p">]</span>
 </span></pre></div>
@@ -111,30 +111,30 @@
 
     </div>
     <a class="headerlink" href="#LinearModel"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="LinearModel-6"><a href="#LinearModel-6"><span class="linenos"> 6</span></a><span class="k">class</span> <span class="nc">LinearModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-</span><span id="LinearModel-7"><a href="#LinearModel-7"><span class="linenos"> 7</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A linear model for training and prediction.&quot;&quot;&quot;</span>
-</span><span id="LinearModel-8"><a href="#LinearModel-8"><span class="linenos"> 8</span></a>
-</span><span id="LinearModel-9"><a href="#LinearModel-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="LinearModel-10"><a href="#LinearModel-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Trains the linear model on the provided data.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LinearModel-9"><a href="#LinearModel-9"><span class="linenos"> 9</span></a><span class="k">class</span> <span class="nc">LinearModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+</span><span id="LinearModel-10"><a href="#LinearModel-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A linear model for training and prediction.&quot;&quot;&quot;</span>
 </span><span id="LinearModel-11"><a href="#LinearModel-11"><span class="linenos">11</span></a>
-</span><span id="LinearModel-12"><a href="#LinearModel-12"><span class="linenos">12</span></a><span class="sd">        Args:</span>
-</span><span id="LinearModel-13"><a href="#LinearModel-13"><span class="linenos">13</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
-</span><span id="LinearModel-14"><a href="#LinearModel-14"><span class="linenos">14</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
-</span><span id="LinearModel-15"><a href="#LinearModel-15"><span class="linenos">15</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="LinearModel-16"><a href="#LinearModel-16"><span class="linenos">16</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Linear Model on data&quot;</span><span class="p">)</span>
-</span><span id="LinearModel-17"><a href="#LinearModel-17"><span class="linenos">17</span></a>        <span class="c1"># Dummy training logic</span>
-</span><span id="LinearModel-18"><a href="#LinearModel-18"><span class="linenos">18</span></a>
-</span><span id="LinearModel-19"><a href="#LinearModel-19"><span class="linenos">19</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
-</span><span id="LinearModel-20"><a href="#LinearModel-20"><span class="linenos">20</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Predicts the target values using the linear model.</span>
+</span><span id="LinearModel-12"><a href="#LinearModel-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="LinearModel-13"><a href="#LinearModel-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Trains the linear model on the provided data.</span>
+</span><span id="LinearModel-14"><a href="#LinearModel-14"><span class="linenos">14</span></a>
+</span><span id="LinearModel-15"><a href="#LinearModel-15"><span class="linenos">15</span></a><span class="sd">        Args:</span>
+</span><span id="LinearModel-16"><a href="#LinearModel-16"><span class="linenos">16</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
+</span><span id="LinearModel-17"><a href="#LinearModel-17"><span class="linenos">17</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
+</span><span id="LinearModel-18"><a href="#LinearModel-18"><span class="linenos">18</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="LinearModel-19"><a href="#LinearModel-19"><span class="linenos">19</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Linear Model on data&quot;</span><span class="p">)</span>
+</span><span id="LinearModel-20"><a href="#LinearModel-20"><span class="linenos">20</span></a>        <span class="c1"># Dummy training logic</span>
 </span><span id="LinearModel-21"><a href="#LinearModel-21"><span class="linenos">21</span></a>
-</span><span id="LinearModel-22"><a href="#LinearModel-22"><span class="linenos">22</span></a><span class="sd">        Args:</span>
-</span><span id="LinearModel-23"><a href="#LinearModel-23"><span class="linenos">23</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
+</span><span id="LinearModel-22"><a href="#LinearModel-22"><span class="linenos">22</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+</span><span id="LinearModel-23"><a href="#LinearModel-23"><span class="linenos">23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Predicts the target values using the linear model.</span>
 </span><span id="LinearModel-24"><a href="#LinearModel-24"><span class="linenos">24</span></a>
-</span><span id="LinearModel-25"><a href="#LinearModel-25"><span class="linenos">25</span></a><span class="sd">        Returns:</span>
-</span><span id="LinearModel-26"><a href="#LinearModel-26"><span class="linenos">26</span></a><span class="sd">            pd.Series: The predicted target values.</span>
-</span><span id="LinearModel-27"><a href="#LinearModel-27"><span class="linenos">27</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="LinearModel-28"><a href="#LinearModel-28"><span class="linenos">28</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicting with Linear Model&quot;</span><span class="p">)</span>
-</span><span id="LinearModel-29"><a href="#LinearModel-29"><span class="linenos">29</span></a>        <span class="k">return</span> <span class="n">X</span> <span class="o">*</span> <span class="mi">2</span>
+</span><span id="LinearModel-25"><a href="#LinearModel-25"><span class="linenos">25</span></a><span class="sd">        Args:</span>
+</span><span id="LinearModel-26"><a href="#LinearModel-26"><span class="linenos">26</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
+</span><span id="LinearModel-27"><a href="#LinearModel-27"><span class="linenos">27</span></a>
+</span><span id="LinearModel-28"><a href="#LinearModel-28"><span class="linenos">28</span></a><span class="sd">        Returns:</span>
+</span><span id="LinearModel-29"><a href="#LinearModel-29"><span class="linenos">29</span></a><span class="sd">            pd.Series: The predicted target values.</span>
+</span><span id="LinearModel-30"><a href="#LinearModel-30"><span class="linenos">30</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="LinearModel-31"><a href="#LinearModel-31"><span class="linenos">31</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicting with Linear Model&quot;</span><span class="p">)</span>
+</span><span id="LinearModel-32"><a href="#LinearModel-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -153,15 +153,15 @@
 
     </div>
     <a class="headerlink" href="#LinearModel.train"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="LinearModel.train-9"><a href="#LinearModel.train-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="LinearModel.train-10"><a href="#LinearModel.train-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Trains the linear model on the provided data.</span>
-</span><span id="LinearModel.train-11"><a href="#LinearModel.train-11"><span class="linenos">11</span></a>
-</span><span id="LinearModel.train-12"><a href="#LinearModel.train-12"><span class="linenos">12</span></a><span class="sd">        Args:</span>
-</span><span id="LinearModel.train-13"><a href="#LinearModel.train-13"><span class="linenos">13</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
-</span><span id="LinearModel.train-14"><a href="#LinearModel.train-14"><span class="linenos">14</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
-</span><span id="LinearModel.train-15"><a href="#LinearModel.train-15"><span class="linenos">15</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="LinearModel.train-16"><a href="#LinearModel.train-16"><span class="linenos">16</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Linear Model on data&quot;</span><span class="p">)</span>
-</span><span id="LinearModel.train-17"><a href="#LinearModel.train-17"><span class="linenos">17</span></a>        <span class="c1"># Dummy training logic</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LinearModel.train-12"><a href="#LinearModel.train-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="LinearModel.train-13"><a href="#LinearModel.train-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Trains the linear model on the provided data.</span>
+</span><span id="LinearModel.train-14"><a href="#LinearModel.train-14"><span class="linenos">14</span></a>
+</span><span id="LinearModel.train-15"><a href="#LinearModel.train-15"><span class="linenos">15</span></a><span class="sd">        Args:</span>
+</span><span id="LinearModel.train-16"><a href="#LinearModel.train-16"><span class="linenos">16</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
+</span><span id="LinearModel.train-17"><a href="#LinearModel.train-17"><span class="linenos">17</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
+</span><span id="LinearModel.train-18"><a href="#LinearModel.train-18"><span class="linenos">18</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="LinearModel.train-19"><a href="#LinearModel.train-19"><span class="linenos">19</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Linear Model on data&quot;</span><span class="p">)</span>
+</span><span id="LinearModel.train-20"><a href="#LinearModel.train-20"><span class="linenos">20</span></a>        <span class="c1"># Dummy training logic</span>
 </span></pre></div>
 
 
@@ -188,17 +188,17 @@
 
     </div>
     <a class="headerlink" href="#LinearModel.predict"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="LinearModel.predict-19"><a href="#LinearModel.predict-19"><span class="linenos">19</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
-</span><span id="LinearModel.predict-20"><a href="#LinearModel.predict-20"><span class="linenos">20</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Predicts the target values using the linear model.</span>
-</span><span id="LinearModel.predict-21"><a href="#LinearModel.predict-21"><span class="linenos">21</span></a>
-</span><span id="LinearModel.predict-22"><a href="#LinearModel.predict-22"><span class="linenos">22</span></a><span class="sd">        Args:</span>
-</span><span id="LinearModel.predict-23"><a href="#LinearModel.predict-23"><span class="linenos">23</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LinearModel.predict-22"><a href="#LinearModel.predict-22"><span class="linenos">22</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+</span><span id="LinearModel.predict-23"><a href="#LinearModel.predict-23"><span class="linenos">23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Predicts the target values using the linear model.</span>
 </span><span id="LinearModel.predict-24"><a href="#LinearModel.predict-24"><span class="linenos">24</span></a>
-</span><span id="LinearModel.predict-25"><a href="#LinearModel.predict-25"><span class="linenos">25</span></a><span class="sd">        Returns:</span>
-</span><span id="LinearModel.predict-26"><a href="#LinearModel.predict-26"><span class="linenos">26</span></a><span class="sd">            pd.Series: The predicted target values.</span>
-</span><span id="LinearModel.predict-27"><a href="#LinearModel.predict-27"><span class="linenos">27</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="LinearModel.predict-28"><a href="#LinearModel.predict-28"><span class="linenos">28</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicting with Linear Model&quot;</span><span class="p">)</span>
-</span><span id="LinearModel.predict-29"><a href="#LinearModel.predict-29"><span class="linenos">29</span></a>        <span class="k">return</span> <span class="n">X</span> <span class="o">*</span> <span class="mi">2</span>
+</span><span id="LinearModel.predict-25"><a href="#LinearModel.predict-25"><span class="linenos">25</span></a><span class="sd">        Args:</span>
+</span><span id="LinearModel.predict-26"><a href="#LinearModel.predict-26"><span class="linenos">26</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
+</span><span id="LinearModel.predict-27"><a href="#LinearModel.predict-27"><span class="linenos">27</span></a>
+</span><span id="LinearModel.predict-28"><a href="#LinearModel.predict-28"><span class="linenos">28</span></a><span class="sd">        Returns:</span>
+</span><span id="LinearModel.predict-29"><a href="#LinearModel.predict-29"><span class="linenos">29</span></a><span class="sd">            pd.Series: The predicted target values.</span>
+</span><span id="LinearModel.predict-30"><a href="#LinearModel.predict-30"><span class="linenos">30</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="LinearModel.predict-31"><a href="#LinearModel.predict-31"><span class="linenos">31</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicting with Linear Model&quot;</span><span class="p">)</span>
+</span><span id="LinearModel.predict-32"><a href="#LinearModel.predict-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -231,40 +231,41 @@
 
     </div>
     <a class="headerlink" href="#DecisionTreeModel"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel-6"><a href="#DecisionTreeModel-6"><span class="linenos"> 6</span></a><span class="k">class</span> <span class="nc">DecisionTreeModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-</span><span id="DecisionTreeModel-7"><a href="#DecisionTreeModel-7"><span class="linenos"> 7</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A decision tree model for training and prediction.&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-8"><a href="#DecisionTreeModel-8"><span class="linenos"> 8</span></a>
-</span><span id="DecisionTreeModel-9"><a href="#DecisionTreeModel-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="DecisionTreeModel-10"><a href="#DecisionTreeModel-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-11"><a href="#DecisionTreeModel-11"><span class="linenos">11</span></a><span class="sd">        Initializes the DecisionTreeModel with the given parameters.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel-10"><a href="#DecisionTreeModel-10"><span class="linenos">10</span></a><span class="k">class</span> <span class="nc">DecisionTreeModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+</span><span id="DecisionTreeModel-11"><a href="#DecisionTreeModel-11"><span class="linenos">11</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A decision tree model for training and prediction.&quot;&quot;&quot;</span>
 </span><span id="DecisionTreeModel-12"><a href="#DecisionTreeModel-12"><span class="linenos">12</span></a>
-</span><span id="DecisionTreeModel-13"><a href="#DecisionTreeModel-13"><span class="linenos">13</span></a><span class="sd">        Args:</span>
-</span><span id="DecisionTreeModel-14"><a href="#DecisionTreeModel-14"><span class="linenos">14</span></a><span class="sd">            **kwargs: Arbitrary keyword arguments passed to the DecisionTreeClassifier.</span>
-</span><span id="DecisionTreeModel-15"><a href="#DecisionTreeModel-15"><span class="linenos">15</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-16"><a href="#DecisionTreeModel-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</span><span id="DecisionTreeModel-17"><a href="#DecisionTreeModel-17"><span class="linenos">17</span></a>
-</span><span id="DecisionTreeModel-18"><a href="#DecisionTreeModel-18"><span class="linenos">18</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="DecisionTreeModel-19"><a href="#DecisionTreeModel-19"><span class="linenos">19</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-20"><a href="#DecisionTreeModel-20"><span class="linenos">20</span></a><span class="sd">        Trains the decision tree model on the provided data.</span>
+</span><span id="DecisionTreeModel-13"><a href="#DecisionTreeModel-13"><span class="linenos">13</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DecisionTreeModel-14"><a href="#DecisionTreeModel-14"><span class="linenos">14</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel-15"><a href="#DecisionTreeModel-15"><span class="linenos">15</span></a><span class="sd">        Initializes the DecisionTreeModel with the given parameters.</span>
+</span><span id="DecisionTreeModel-16"><a href="#DecisionTreeModel-16"><span class="linenos">16</span></a>
+</span><span id="DecisionTreeModel-17"><a href="#DecisionTreeModel-17"><span class="linenos">17</span></a><span class="sd">        Args:</span>
+</span><span id="DecisionTreeModel-18"><a href="#DecisionTreeModel-18"><span class="linenos">18</span></a><span class="sd">            **kwargs: Arbitrary keyword arguments passed to the DecisionTreeClassifier.</span>
+</span><span id="DecisionTreeModel-19"><a href="#DecisionTreeModel-19"><span class="linenos">19</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel-20"><a href="#DecisionTreeModel-20"><span class="linenos">20</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </span><span id="DecisionTreeModel-21"><a href="#DecisionTreeModel-21"><span class="linenos">21</span></a>
-</span><span id="DecisionTreeModel-22"><a href="#DecisionTreeModel-22"><span class="linenos">22</span></a><span class="sd">        Args:</span>
-</span><span id="DecisionTreeModel-23"><a href="#DecisionTreeModel-23"><span class="linenos">23</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
-</span><span id="DecisionTreeModel-24"><a href="#DecisionTreeModel-24"><span class="linenos">24</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
-</span><span id="DecisionTreeModel-25"><a href="#DecisionTreeModel-25"><span class="linenos">25</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-26"><a href="#DecisionTreeModel-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span id="DecisionTreeModel-27"><a href="#DecisionTreeModel-27"><span class="linenos">27</span></a>
-</span><span id="DecisionTreeModel-28"><a href="#DecisionTreeModel-28"><span class="linenos">28</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
-</span><span id="DecisionTreeModel-29"><a href="#DecisionTreeModel-29"><span class="linenos">29</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-30"><a href="#DecisionTreeModel-30"><span class="linenos">30</span></a><span class="sd">        Predicts the target values using the decision tree model.</span>
+</span><span id="DecisionTreeModel-22"><a href="#DecisionTreeModel-22"><span class="linenos">22</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DecisionTreeModel-23"><a href="#DecisionTreeModel-23"><span class="linenos">23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel-24"><a href="#DecisionTreeModel-24"><span class="linenos">24</span></a><span class="sd">        Trains the decision tree model on the provided data.</span>
+</span><span id="DecisionTreeModel-25"><a href="#DecisionTreeModel-25"><span class="linenos">25</span></a>
+</span><span id="DecisionTreeModel-26"><a href="#DecisionTreeModel-26"><span class="linenos">26</span></a><span class="sd">        Args:</span>
+</span><span id="DecisionTreeModel-27"><a href="#DecisionTreeModel-27"><span class="linenos">27</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
+</span><span id="DecisionTreeModel-28"><a href="#DecisionTreeModel-28"><span class="linenos">28</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
+</span><span id="DecisionTreeModel-29"><a href="#DecisionTreeModel-29"><span class="linenos">29</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel-30"><a href="#DecisionTreeModel-30"><span class="linenos">30</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </span><span id="DecisionTreeModel-31"><a href="#DecisionTreeModel-31"><span class="linenos">31</span></a>
-</span><span id="DecisionTreeModel-32"><a href="#DecisionTreeModel-32"><span class="linenos">32</span></a><span class="sd">        Args:</span>
-</span><span id="DecisionTreeModel-33"><a href="#DecisionTreeModel-33"><span class="linenos">33</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
-</span><span id="DecisionTreeModel-34"><a href="#DecisionTreeModel-34"><span class="linenos">34</span></a>
-</span><span id="DecisionTreeModel-35"><a href="#DecisionTreeModel-35"><span class="linenos">35</span></a><span class="sd">        Returns:</span>
-</span><span id="DecisionTreeModel-36"><a href="#DecisionTreeModel-36"><span class="linenos">36</span></a><span class="sd">            pd.Series: The predicted target values.</span>
-</span><span id="DecisionTreeModel-37"><a href="#DecisionTreeModel-37"><span class="linenos">37</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel-38"><a href="#DecisionTreeModel-38"><span class="linenos">38</span></a>        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-</span><span id="DecisionTreeModel-39"><a href="#DecisionTreeModel-39"><span class="linenos">39</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</span><span id="DecisionTreeModel-32"><a href="#DecisionTreeModel-32"><span class="linenos">32</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+</span><span id="DecisionTreeModel-33"><a href="#DecisionTreeModel-33"><span class="linenos">33</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel-34"><a href="#DecisionTreeModel-34"><span class="linenos">34</span></a><span class="sd">        Predicts the target values using the decision tree model.</span>
+</span><span id="DecisionTreeModel-35"><a href="#DecisionTreeModel-35"><span class="linenos">35</span></a>
+</span><span id="DecisionTreeModel-36"><a href="#DecisionTreeModel-36"><span class="linenos">36</span></a><span class="sd">        Args:</span>
+</span><span id="DecisionTreeModel-37"><a href="#DecisionTreeModel-37"><span class="linenos">37</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
+</span><span id="DecisionTreeModel-38"><a href="#DecisionTreeModel-38"><span class="linenos">38</span></a>
+</span><span id="DecisionTreeModel-39"><a href="#DecisionTreeModel-39"><span class="linenos">39</span></a><span class="sd">        Returns:</span>
+</span><span id="DecisionTreeModel-40"><a href="#DecisionTreeModel-40"><span class="linenos">40</span></a><span class="sd">            pd.Series: The predicted target values.</span>
+</span><span id="DecisionTreeModel-41"><a href="#DecisionTreeModel-41"><span class="linenos">41</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel-42"><a href="#DecisionTreeModel-42"><span class="linenos">42</span></a>        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span><span id="DecisionTreeModel-43"><a href="#DecisionTreeModel-43"><span class="linenos">43</span></a>
+</span><span id="DecisionTreeModel-44"><a href="#DecisionTreeModel-44"><span class="linenos">44</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -276,20 +277,20 @@
                                         <input id="DecisionTreeModel.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">DecisionTreeModel</span><span class="signature pdoc-code condensed">(<span class="param"><span class="o">**</span><span class="n">kwargs</span></span>)</span>
+        <span class="name">DecisionTreeModel</span><span class="signature pdoc-code condensed">(<span class="param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span></span>)</span>
 
                 <label class="view-source-button" for="DecisionTreeModel.__init__-view-source"><span>View Source</span></label>
 
     </div>
     <a class="headerlink" href="#DecisionTreeModel.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel.__init__-9"><a href="#DecisionTreeModel.__init__-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="DecisionTreeModel.__init__-10"><a href="#DecisionTreeModel.__init__-10"><span class="linenos">10</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel.__init__-11"><a href="#DecisionTreeModel.__init__-11"><span class="linenos">11</span></a><span class="sd">        Initializes the DecisionTreeModel with the given parameters.</span>
-</span><span id="DecisionTreeModel.__init__-12"><a href="#DecisionTreeModel.__init__-12"><span class="linenos">12</span></a>
-</span><span id="DecisionTreeModel.__init__-13"><a href="#DecisionTreeModel.__init__-13"><span class="linenos">13</span></a><span class="sd">        Args:</span>
-</span><span id="DecisionTreeModel.__init__-14"><a href="#DecisionTreeModel.__init__-14"><span class="linenos">14</span></a><span class="sd">            **kwargs: Arbitrary keyword arguments passed to the DecisionTreeClassifier.</span>
-</span><span id="DecisionTreeModel.__init__-15"><a href="#DecisionTreeModel.__init__-15"><span class="linenos">15</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel.__init__-16"><a href="#DecisionTreeModel.__init__-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel.__init__-13"><a href="#DecisionTreeModel.__init__-13"><span class="linenos">13</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DecisionTreeModel.__init__-14"><a href="#DecisionTreeModel.__init__-14"><span class="linenos">14</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel.__init__-15"><a href="#DecisionTreeModel.__init__-15"><span class="linenos">15</span></a><span class="sd">        Initializes the DecisionTreeModel with the given parameters.</span>
+</span><span id="DecisionTreeModel.__init__-16"><a href="#DecisionTreeModel.__init__-16"><span class="linenos">16</span></a>
+</span><span id="DecisionTreeModel.__init__-17"><a href="#DecisionTreeModel.__init__-17"><span class="linenos">17</span></a><span class="sd">        Args:</span>
+</span><span id="DecisionTreeModel.__init__-18"><a href="#DecisionTreeModel.__init__-18"><span class="linenos">18</span></a><span class="sd">            **kwargs: Arbitrary keyword arguments passed to the DecisionTreeClassifier.</span>
+</span><span id="DecisionTreeModel.__init__-19"><a href="#DecisionTreeModel.__init__-19"><span class="linenos">19</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel.__init__-20"><a href="#DecisionTreeModel.__init__-20"><span class="linenos">20</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -326,15 +327,15 @@
 
     </div>
     <a class="headerlink" href="#DecisionTreeModel.train"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel.train-18"><a href="#DecisionTreeModel.train-18"><span class="linenos">18</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="DecisionTreeModel.train-19"><a href="#DecisionTreeModel.train-19"><span class="linenos">19</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel.train-20"><a href="#DecisionTreeModel.train-20"><span class="linenos">20</span></a><span class="sd">        Trains the decision tree model on the provided data.</span>
-</span><span id="DecisionTreeModel.train-21"><a href="#DecisionTreeModel.train-21"><span class="linenos">21</span></a>
-</span><span id="DecisionTreeModel.train-22"><a href="#DecisionTreeModel.train-22"><span class="linenos">22</span></a><span class="sd">        Args:</span>
-</span><span id="DecisionTreeModel.train-23"><a href="#DecisionTreeModel.train-23"><span class="linenos">23</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
-</span><span id="DecisionTreeModel.train-24"><a href="#DecisionTreeModel.train-24"><span class="linenos">24</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
-</span><span id="DecisionTreeModel.train-25"><a href="#DecisionTreeModel.train-25"><span class="linenos">25</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel.train-26"><a href="#DecisionTreeModel.train-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel.train-22"><a href="#DecisionTreeModel.train-22"><span class="linenos">22</span></a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DecisionTreeModel.train-23"><a href="#DecisionTreeModel.train-23"><span class="linenos">23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel.train-24"><a href="#DecisionTreeModel.train-24"><span class="linenos">24</span></a><span class="sd">        Trains the decision tree model on the provided data.</span>
+</span><span id="DecisionTreeModel.train-25"><a href="#DecisionTreeModel.train-25"><span class="linenos">25</span></a>
+</span><span id="DecisionTreeModel.train-26"><a href="#DecisionTreeModel.train-26"><span class="linenos">26</span></a><span class="sd">        Args:</span>
+</span><span id="DecisionTreeModel.train-27"><a href="#DecisionTreeModel.train-27"><span class="linenos">27</span></a><span class="sd">            X (pd.DataFrame): The input features for training.</span>
+</span><span id="DecisionTreeModel.train-28"><a href="#DecisionTreeModel.train-28"><span class="linenos">28</span></a><span class="sd">            y (pd.Series): The target values for training.</span>
+</span><span id="DecisionTreeModel.train-29"><a href="#DecisionTreeModel.train-29"><span class="linenos">29</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel.train-30"><a href="#DecisionTreeModel.train-30"><span class="linenos">30</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -361,18 +362,19 @@
 
     </div>
     <a class="headerlink" href="#DecisionTreeModel.predict"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel.predict-28"><a href="#DecisionTreeModel.predict-28"><span class="linenos">28</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
-</span><span id="DecisionTreeModel.predict-29"><a href="#DecisionTreeModel.predict-29"><span class="linenos">29</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel.predict-30"><a href="#DecisionTreeModel.predict-30"><span class="linenos">30</span></a><span class="sd">        Predicts the target values using the decision tree model.</span>
-</span><span id="DecisionTreeModel.predict-31"><a href="#DecisionTreeModel.predict-31"><span class="linenos">31</span></a>
-</span><span id="DecisionTreeModel.predict-32"><a href="#DecisionTreeModel.predict-32"><span class="linenos">32</span></a><span class="sd">        Args:</span>
-</span><span id="DecisionTreeModel.predict-33"><a href="#DecisionTreeModel.predict-33"><span class="linenos">33</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
-</span><span id="DecisionTreeModel.predict-34"><a href="#DecisionTreeModel.predict-34"><span class="linenos">34</span></a>
-</span><span id="DecisionTreeModel.predict-35"><a href="#DecisionTreeModel.predict-35"><span class="linenos">35</span></a><span class="sd">        Returns:</span>
-</span><span id="DecisionTreeModel.predict-36"><a href="#DecisionTreeModel.predict-36"><span class="linenos">36</span></a><span class="sd">            pd.Series: The predicted target values.</span>
-</span><span id="DecisionTreeModel.predict-37"><a href="#DecisionTreeModel.predict-37"><span class="linenos">37</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="DecisionTreeModel.predict-38"><a href="#DecisionTreeModel.predict-38"><span class="linenos">38</span></a>        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-</span><span id="DecisionTreeModel.predict-39"><a href="#DecisionTreeModel.predict-39"><span class="linenos">39</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DecisionTreeModel.predict-32"><a href="#DecisionTreeModel.predict-32"><span class="linenos">32</span></a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+</span><span id="DecisionTreeModel.predict-33"><a href="#DecisionTreeModel.predict-33"><span class="linenos">33</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel.predict-34"><a href="#DecisionTreeModel.predict-34"><span class="linenos">34</span></a><span class="sd">        Predicts the target values using the decision tree model.</span>
+</span><span id="DecisionTreeModel.predict-35"><a href="#DecisionTreeModel.predict-35"><span class="linenos">35</span></a>
+</span><span id="DecisionTreeModel.predict-36"><a href="#DecisionTreeModel.predict-36"><span class="linenos">36</span></a><span class="sd">        Args:</span>
+</span><span id="DecisionTreeModel.predict-37"><a href="#DecisionTreeModel.predict-37"><span class="linenos">37</span></a><span class="sd">            X (pd.DataFrame): The input features for prediction.</span>
+</span><span id="DecisionTreeModel.predict-38"><a href="#DecisionTreeModel.predict-38"><span class="linenos">38</span></a>
+</span><span id="DecisionTreeModel.predict-39"><a href="#DecisionTreeModel.predict-39"><span class="linenos">39</span></a><span class="sd">        Returns:</span>
+</span><span id="DecisionTreeModel.predict-40"><a href="#DecisionTreeModel.predict-40"><span class="linenos">40</span></a><span class="sd">            pd.Series: The predicted target values.</span>
+</span><span id="DecisionTreeModel.predict-41"><a href="#DecisionTreeModel.predict-41"><span class="linenos">41</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="DecisionTreeModel.predict-42"><a href="#DecisionTreeModel.predict-42"><span class="linenos">42</span></a>        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span><span id="DecisionTreeModel.predict-43"><a href="#DecisionTreeModel.predict-43"><span class="linenos">43</span></a>
+</span><span id="DecisionTreeModel.predict-44"><a href="#DecisionTreeModel.predict-44"><span class="linenos">44</span></a>        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -405,28 +407,28 @@
 
     </div>
     <a class="headerlink" href="#ModelFactory"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="ModelFactory-7"><a href="#ModelFactory-7"><span class="linenos"> 7</span></a><span class="k">class</span> <span class="nc">ModelFactory</span><span class="p">:</span>
-</span><span id="ModelFactory-8"><a href="#ModelFactory-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Factory class to create model instances based on the model type.&quot;&quot;&quot;</span>
-</span><span id="ModelFactory-9"><a href="#ModelFactory-9"><span class="linenos"> 9</span></a>
-</span><span id="ModelFactory-10"><a href="#ModelFactory-10"><span class="linenos">10</span></a>    <span class="nd">@staticmethod</span>
-</span><span id="ModelFactory-11"><a href="#ModelFactory-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Model</span><span class="p">:</span>
-</span><span id="ModelFactory-12"><a href="#ModelFactory-12"><span class="linenos">12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a model based on the provided model type.</span>
-</span><span id="ModelFactory-13"><a href="#ModelFactory-13"><span class="linenos">13</span></a>
-</span><span id="ModelFactory-14"><a href="#ModelFactory-14"><span class="linenos">14</span></a><span class="sd">        Args:</span>
-</span><span id="ModelFactory-15"><a href="#ModelFactory-15"><span class="linenos">15</span></a><span class="sd">            model_type (str): The type of model to create. Options are &quot;linear&quot; or &quot;tree&quot;.</span>
-</span><span id="ModelFactory-16"><a href="#ModelFactory-16"><span class="linenos">16</span></a>
-</span><span id="ModelFactory-17"><a href="#ModelFactory-17"><span class="linenos">17</span></a><span class="sd">        Returns:</span>
-</span><span id="ModelFactory-18"><a href="#ModelFactory-18"><span class="linenos">18</span></a><span class="sd">            Model: An instance of the requested model type.</span>
-</span><span id="ModelFactory-19"><a href="#ModelFactory-19"><span class="linenos">19</span></a>
-</span><span id="ModelFactory-20"><a href="#ModelFactory-20"><span class="linenos">20</span></a><span class="sd">        Raises:</span>
-</span><span id="ModelFactory-21"><a href="#ModelFactory-21"><span class="linenos">21</span></a><span class="sd">            ValueError: If the provided model type is unsupported.</span>
-</span><span id="ModelFactory-22"><a href="#ModelFactory-22"><span class="linenos">22</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="ModelFactory-23"><a href="#ModelFactory-23"><span class="linenos">23</span></a>        <span class="k">if</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span>
-</span><span id="ModelFactory-24"><a href="#ModelFactory-24"><span class="linenos">24</span></a>            <span class="k">return</span> <span class="n">LinearModel</span><span class="p">()</span>
-</span><span id="ModelFactory-25"><a href="#ModelFactory-25"><span class="linenos">25</span></a>        <span class="k">elif</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;tree&quot;</span><span class="p">:</span>
-</span><span id="ModelFactory-26"><a href="#ModelFactory-26"><span class="linenos">26</span></a>            <span class="k">return</span> <span class="n">DecisionTreeModel</span><span class="p">()</span>
-</span><span id="ModelFactory-27"><a href="#ModelFactory-27"><span class="linenos">27</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="ModelFactory-28"><a href="#ModelFactory-28"><span class="linenos">28</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported model type: </span><span class="si">{</span><span class="n">model_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ModelFactory-8"><a href="#ModelFactory-8"><span class="linenos"> 8</span></a><span class="k">class</span> <span class="nc">ModelFactory</span><span class="p">:</span>
+</span><span id="ModelFactory-9"><a href="#ModelFactory-9"><span class="linenos"> 9</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Factory class to create model instances based on the model type.&quot;&quot;&quot;</span>
+</span><span id="ModelFactory-10"><a href="#ModelFactory-10"><span class="linenos">10</span></a>
+</span><span id="ModelFactory-11"><a href="#ModelFactory-11"><span class="linenos">11</span></a>    <span class="nd">@staticmethod</span>
+</span><span id="ModelFactory-12"><a href="#ModelFactory-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Model</span><span class="p">:</span>
+</span><span id="ModelFactory-13"><a href="#ModelFactory-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a model based on the provided model type.</span>
+</span><span id="ModelFactory-14"><a href="#ModelFactory-14"><span class="linenos">14</span></a>
+</span><span id="ModelFactory-15"><a href="#ModelFactory-15"><span class="linenos">15</span></a><span class="sd">        Args:</span>
+</span><span id="ModelFactory-16"><a href="#ModelFactory-16"><span class="linenos">16</span></a><span class="sd">            model_type (str): The type of model to create. Options are &quot;linear&quot; or &quot;tree&quot;.</span>
+</span><span id="ModelFactory-17"><a href="#ModelFactory-17"><span class="linenos">17</span></a>
+</span><span id="ModelFactory-18"><a href="#ModelFactory-18"><span class="linenos">18</span></a><span class="sd">        Returns:</span>
+</span><span id="ModelFactory-19"><a href="#ModelFactory-19"><span class="linenos">19</span></a><span class="sd">            Model: An instance of the requested model type.</span>
+</span><span id="ModelFactory-20"><a href="#ModelFactory-20"><span class="linenos">20</span></a>
+</span><span id="ModelFactory-21"><a href="#ModelFactory-21"><span class="linenos">21</span></a><span class="sd">        Raises:</span>
+</span><span id="ModelFactory-22"><a href="#ModelFactory-22"><span class="linenos">22</span></a><span class="sd">            ValueError: If the provided model type is unsupported.</span>
+</span><span id="ModelFactory-23"><a href="#ModelFactory-23"><span class="linenos">23</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="ModelFactory-24"><a href="#ModelFactory-24"><span class="linenos">24</span></a>        <span class="k">if</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span>
+</span><span id="ModelFactory-25"><a href="#ModelFactory-25"><span class="linenos">25</span></a>            <span class="k">return</span> <span class="n">LinearModel</span><span class="p">()</span>
+</span><span id="ModelFactory-26"><a href="#ModelFactory-26"><span class="linenos">26</span></a>        <span class="k">elif</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;tree&quot;</span><span class="p">:</span>
+</span><span id="ModelFactory-27"><a href="#ModelFactory-27"><span class="linenos">27</span></a>            <span class="k">return</span> <span class="n">DecisionTreeModel</span><span class="p">()</span>
+</span><span id="ModelFactory-28"><a href="#ModelFactory-28"><span class="linenos">28</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="ModelFactory-29"><a href="#ModelFactory-29"><span class="linenos">29</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported model type: </span><span class="si">{</span><span class="n">model_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -446,25 +448,25 @@
 
     </div>
     <a class="headerlink" href="#ModelFactory.get_model"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="ModelFactory.get_model-10"><a href="#ModelFactory.get_model-10"><span class="linenos">10</span></a>    <span class="nd">@staticmethod</span>
-</span><span id="ModelFactory.get_model-11"><a href="#ModelFactory.get_model-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Model</span><span class="p">:</span>
-</span><span id="ModelFactory.get_model-12"><a href="#ModelFactory.get_model-12"><span class="linenos">12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a model based on the provided model type.</span>
-</span><span id="ModelFactory.get_model-13"><a href="#ModelFactory.get_model-13"><span class="linenos">13</span></a>
-</span><span id="ModelFactory.get_model-14"><a href="#ModelFactory.get_model-14"><span class="linenos">14</span></a><span class="sd">        Args:</span>
-</span><span id="ModelFactory.get_model-15"><a href="#ModelFactory.get_model-15"><span class="linenos">15</span></a><span class="sd">            model_type (str): The type of model to create. Options are &quot;linear&quot; or &quot;tree&quot;.</span>
-</span><span id="ModelFactory.get_model-16"><a href="#ModelFactory.get_model-16"><span class="linenos">16</span></a>
-</span><span id="ModelFactory.get_model-17"><a href="#ModelFactory.get_model-17"><span class="linenos">17</span></a><span class="sd">        Returns:</span>
-</span><span id="ModelFactory.get_model-18"><a href="#ModelFactory.get_model-18"><span class="linenos">18</span></a><span class="sd">            Model: An instance of the requested model type.</span>
-</span><span id="ModelFactory.get_model-19"><a href="#ModelFactory.get_model-19"><span class="linenos">19</span></a>
-</span><span id="ModelFactory.get_model-20"><a href="#ModelFactory.get_model-20"><span class="linenos">20</span></a><span class="sd">        Raises:</span>
-</span><span id="ModelFactory.get_model-21"><a href="#ModelFactory.get_model-21"><span class="linenos">21</span></a><span class="sd">            ValueError: If the provided model type is unsupported.</span>
-</span><span id="ModelFactory.get_model-22"><a href="#ModelFactory.get_model-22"><span class="linenos">22</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="ModelFactory.get_model-23"><a href="#ModelFactory.get_model-23"><span class="linenos">23</span></a>        <span class="k">if</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span>
-</span><span id="ModelFactory.get_model-24"><a href="#ModelFactory.get_model-24"><span class="linenos">24</span></a>            <span class="k">return</span> <span class="n">LinearModel</span><span class="p">()</span>
-</span><span id="ModelFactory.get_model-25"><a href="#ModelFactory.get_model-25"><span class="linenos">25</span></a>        <span class="k">elif</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;tree&quot;</span><span class="p">:</span>
-</span><span id="ModelFactory.get_model-26"><a href="#ModelFactory.get_model-26"><span class="linenos">26</span></a>            <span class="k">return</span> <span class="n">DecisionTreeModel</span><span class="p">()</span>
-</span><span id="ModelFactory.get_model-27"><a href="#ModelFactory.get_model-27"><span class="linenos">27</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="ModelFactory.get_model-28"><a href="#ModelFactory.get_model-28"><span class="linenos">28</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported model type: </span><span class="si">{</span><span class="n">model_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ModelFactory.get_model-11"><a href="#ModelFactory.get_model-11"><span class="linenos">11</span></a>    <span class="nd">@staticmethod</span>
+</span><span id="ModelFactory.get_model-12"><a href="#ModelFactory.get_model-12"><span class="linenos">12</span></a>    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="n">model_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Model</span><span class="p">:</span>
+</span><span id="ModelFactory.get_model-13"><a href="#ModelFactory.get_model-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an instance of a model based on the provided model type.</span>
+</span><span id="ModelFactory.get_model-14"><a href="#ModelFactory.get_model-14"><span class="linenos">14</span></a>
+</span><span id="ModelFactory.get_model-15"><a href="#ModelFactory.get_model-15"><span class="linenos">15</span></a><span class="sd">        Args:</span>
+</span><span id="ModelFactory.get_model-16"><a href="#ModelFactory.get_model-16"><span class="linenos">16</span></a><span class="sd">            model_type (str): The type of model to create. Options are &quot;linear&quot; or &quot;tree&quot;.</span>
+</span><span id="ModelFactory.get_model-17"><a href="#ModelFactory.get_model-17"><span class="linenos">17</span></a>
+</span><span id="ModelFactory.get_model-18"><a href="#ModelFactory.get_model-18"><span class="linenos">18</span></a><span class="sd">        Returns:</span>
+</span><span id="ModelFactory.get_model-19"><a href="#ModelFactory.get_model-19"><span class="linenos">19</span></a><span class="sd">            Model: An instance of the requested model type.</span>
+</span><span id="ModelFactory.get_model-20"><a href="#ModelFactory.get_model-20"><span class="linenos">20</span></a>
+</span><span id="ModelFactory.get_model-21"><a href="#ModelFactory.get_model-21"><span class="linenos">21</span></a><span class="sd">        Raises:</span>
+</span><span id="ModelFactory.get_model-22"><a href="#ModelFactory.get_model-22"><span class="linenos">22</span></a><span class="sd">            ValueError: If the provided model type is unsupported.</span>
+</span><span id="ModelFactory.get_model-23"><a href="#ModelFactory.get_model-23"><span class="linenos">23</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="ModelFactory.get_model-24"><a href="#ModelFactory.get_model-24"><span class="linenos">24</span></a>        <span class="k">if</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span>
+</span><span id="ModelFactory.get_model-25"><a href="#ModelFactory.get_model-25"><span class="linenos">25</span></a>            <span class="k">return</span> <span class="n">LinearModel</span><span class="p">()</span>
+</span><span id="ModelFactory.get_model-26"><a href="#ModelFactory.get_model-26"><span class="linenos">26</span></a>        <span class="k">elif</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s2">&quot;tree&quot;</span><span class="p">:</span>
+</span><span id="ModelFactory.get_model-27"><a href="#ModelFactory.get_model-27"><span class="linenos">27</span></a>            <span class="k">return</span> <span class="n">DecisionTreeModel</span><span class="p">()</span>
+</span><span id="ModelFactory.get_model-28"><a href="#ModelFactory.get_model-28"><span class="linenos">28</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="ModelFactory.get_model-29"><a href="#ModelFactory.get_model-29"><span class="linenos">29</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported model type: </span><span class="si">{</span><span class="n">model_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
