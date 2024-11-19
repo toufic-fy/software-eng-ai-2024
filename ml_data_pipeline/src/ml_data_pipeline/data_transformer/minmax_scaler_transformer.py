@@ -1,7 +1,9 @@
 # src/ml_data_pipeline/data_transform/minmax_scaler_transformer.py
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+
 from .base_transformer import DataTransformer
+
 
 class MinMaxScalerTransformer(DataTransformer):
     """A transformer that scales data using Min-Max scaling."""

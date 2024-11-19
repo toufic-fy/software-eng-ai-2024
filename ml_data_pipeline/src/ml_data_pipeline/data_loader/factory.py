@@ -1,7 +1,8 @@
 # src/ml_data_pipeline/data_loader/factory.py
+from .base_loader import DataLoader
 from .csv_loader import CSVLoader
 from .json_loader import JSONLoader
-from .base_loader import DataLoader
+
 
 class DataLoaderFactory:
     """Factory class to create data loader instances based on the file type."""

@@ -1,10 +1,10 @@
 # src/ml_data_pipeline/main.py
 import argparse
+
 from ml_data_pipeline.config import load_config
 from ml_data_pipeline.data_loader import DataLoaderFactory
 from ml_data_pipeline.data_transformer import TransformerFactory
 from ml_data_pipeline.models import ModelFactory
-
 
 parser = argparse.ArgumentParser(description="Run the ML data pipeline with specified configuration.")
 parser.add_argument(

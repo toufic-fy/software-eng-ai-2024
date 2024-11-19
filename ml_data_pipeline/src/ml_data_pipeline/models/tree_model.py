@@ -1,6 +1,8 @@
 import pandas as pd
-from .base_model import Model
 from sklearn.tree import DecisionTreeClassifier
+
+from .base_model import Model
+
 
 class DecisionTreeModel(Model):
     """A decision tree model for training and prediction."""

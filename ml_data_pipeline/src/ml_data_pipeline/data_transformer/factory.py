@@ -1,7 +1,8 @@
 # src/ml_data_pipeline/data_transform/factory.py
-from .standard_scaler_transformer import StandardScalerTransformer
-from .minmax_scaler_transformer import MinMaxScalerTransformer
 from .base_transformer import DataTransformer
+from .minmax_scaler_transformer import MinMaxScalerTransformer
+from .standard_scaler_transformer import StandardScalerTransformer
+
 
 class TransformerFactory:
     """Factory class to create transformer instances based on the scaling method."""

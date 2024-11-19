@@ -1,7 +1,8 @@
 # src/ml_data_pipeline/model/factory.py
+from .base_model import Model
 from .linear_model import LinearModel
 from .tree_model import DecisionTreeModel
-from .base_model import Model
+
 
 class ModelFactory:
     """Factory class to create model instances based on the model type."""

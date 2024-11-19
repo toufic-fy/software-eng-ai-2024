@@ -1,7 +1,9 @@
 # src/ml_data_pipeline/data_transform/standard_scaler_transformer.py
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+
 from .base_transformer import DataTransformer
+
 
 class StandardScalerTransformer(DataTransformer):
     """A transformer that scales data using Standard scaling (z-score normalization)."""

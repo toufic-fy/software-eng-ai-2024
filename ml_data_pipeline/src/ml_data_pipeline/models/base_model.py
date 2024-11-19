@@ -1,6 +1,8 @@
 # src/ml_data_pipeline/model/base_model.py
 from abc import ABC, abstractmethod
+
 import pandas as pd
+
 
 class Model(ABC):
     """Abstract base class for models."""

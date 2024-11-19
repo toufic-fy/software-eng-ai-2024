@@ -1,6 +1,8 @@
 # src/ml_data_pipeline/data_loader/csv_loader.py
 import pandas as pd
+
 from .base_loader import DataLoader
+
 
 class CSVLoader(DataLoader):
     """A data loader for loading CSV files."""
