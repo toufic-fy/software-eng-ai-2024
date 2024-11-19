@@ -18,7 +18,7 @@ class DecisionTreeModel(Model):
         """
         self.model = DecisionTreeClassifier(**kwargs)
 
-    def train(self, X: pd.DataFrame, y: pd.Series[Any]) -> None:
+    def train(self, X: pd.DataFrame, y: pd.Series) -> None:
         """
         Trains the decision tree model on the provided data.
 
@@ -28,7 +28,7 @@ class DecisionTreeModel(Model):
         """
         self.model.fit(X, y)
 
-    def predict(self, X: pd.DataFrame) -> pd.Series[Any]:
+    def predict(self, X: pd.DataFrame) -> pd.Series:
         """
         Predicts the target values using the decision tree model.
 

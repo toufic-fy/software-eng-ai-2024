@@ -1,5 +1,4 @@
 # src/ml_data_pipeline/model/linear_model.py
-from typing import Any
 
 import pandas as pd
 
@@ -9,7 +8,7 @@ from .base_model import Model
 class LinearModel(Model):
     """A linear model for training and prediction."""
 
-    def train(self, X: pd.DataFrame, y: pd.Series[Any]) -> None:
+    def train(self, X: pd.DataFrame, y: pd.Series) -> None:
         """Trains the linear model on the provided data.
 
         Args:
@@ -19,7 +18,7 @@ class LinearModel(Model):
         print("Training Linear Model on data")
         # Dummy training logic
 
-    def predict(self, X: pd.DataFrame) -> pd.Series[Any]:
+    def predict(self, X: pd.DataFrame) -> pd.Series:
         """Predicts the target values using the linear model.
 
         Args:

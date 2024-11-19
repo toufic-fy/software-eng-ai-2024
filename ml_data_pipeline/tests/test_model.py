@@ -11,11 +11,11 @@ def sample_data() -> pd.DataFrame:
 
 
 @pytest.fixture
-def sample_target() -> pd.Series[int]:
+def sample_target() -> pd.Series:
     return pd.Series([0, 1, 0])
 
 
-def test_linear_model(sample_data: pd.DataFrame, sample_target: pd.Series[int]) -> None:
+def test_linear_model(sample_data: pd.DataFrame, sample_target: pd.Series) -> None:
     model = ModelFactory.get_model("linear")
     model.train(sample_data, sample_target)
     predictions = model.predict(sample_data)
@@ -23,7 +23,7 @@ def test_linear_model(sample_data: pd.DataFrame, sample_target: pd.Series[int]) 
     assert predictions.shape[0] == sample_data.shape[0]
 
 
-def test_tree_model(sample_data: pd.DataFrame, sample_target: pd.Series[int]) -> None:
+def test_tree_model(sample_data: pd.DataFrame, sample_target: pd.Series) -> None:
     model = ModelFactory.get_model("tree")
     model.train(sample_data, sample_target)
     predictions = model.predict(sample_data)
