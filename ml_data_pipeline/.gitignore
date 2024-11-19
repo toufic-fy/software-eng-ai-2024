@@ -1,0 +1,4 @@
+data/
+
+# Ignore vscode configuration
+.vscode/

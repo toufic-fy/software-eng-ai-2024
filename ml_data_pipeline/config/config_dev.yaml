@@ -1,0 +1,8 @@
+data_loader:
+  file_path: "data/sample_data_dev.csv"
+  file_type: "csv"
+transformation:
+  normalize: false
+  scaling_method: "minmax"
+model:
+  type: "tree" # Options: "linear" or "tree"
