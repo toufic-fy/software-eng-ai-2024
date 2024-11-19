@@ -18,6 +18,6 @@ class JSONLoader(DataLoader):
         Returns:
             pd.DataFrame: The loaded data as a pandas DataFrame.
         """
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             data = json.load(file)
         return pd.DataFrame(data)

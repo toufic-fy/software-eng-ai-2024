@@ -10,6 +10,7 @@ class DataLoaderConfig(BaseModel):
         file_path (str): The path to the data file.
         file_type (str): The type of the data file (csv or json).
     """
+
     file_path: str
     file_type: str
 
@@ -38,6 +39,7 @@ class TransformationConfig(BaseModel):
         normalize (bool): Whether to normalize the data.
         scaling_method (str): The method to use for scaling (standard or minmax).
     """
+
     normalize: bool
     scaling_method: str
 
@@ -65,6 +67,7 @@ class ModelConfig(BaseModel):
     Attributes:
         type (str): The type of the model (linear or tree).
     """
+
     type: str
 
     @field_validator("type")
@@ -93,6 +96,7 @@ class Config(BaseModel):
         transformation (TransformationConfig): Configuration for the data transformation.
         model (ModelConfig): Configuration for the model.
     """
+
     data_loader: DataLoaderConfig
     transformation: TransformationConfig
     model: ModelConfig

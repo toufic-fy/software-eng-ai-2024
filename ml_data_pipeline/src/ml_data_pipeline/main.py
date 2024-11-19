@@ -6,13 +6,13 @@ from ml_data_pipeline.data_loader import DataLoaderFactory
 from ml_data_pipeline.data_transformer import TransformerFactory
 from ml_data_pipeline.models import ModelFactory
 
-parser = argparse.ArgumentParser(description="Run the ML data pipeline with specified configuration.")
+parser = argparse.ArgumentParser(
+    description="Run the ML data pipeline with specified configuration."
+)
 parser.add_argument(
-        "--config",
-        type=str,
-        required=True,
-        help="Path to the configuration YAML file."
-    )
+    "--config", type=str, required=True, help="Path to the configuration YAML file."
+)
+
 
 def main():
     args = parser.parse_args()
@@ -27,7 +27,9 @@ def main():
     print(data)
 
     # Use TransformerFactory to transform data
-    transformer = TransformerFactory.get_transformer(config.transformation.scaling_method)
+    transformer = TransformerFactory.get_transformer(
+        config.transformation.scaling_method
+    )
     transformed_data = transformer.transform(data)
     print("Transformed Data:")
     print(transformed_data)
@@ -38,6 +40,7 @@ def main():
     predictions = model.predict(transformed_data)
     print("Predictions:")
     print(predictions)
+
 
 if __name__ == "__main__":
     main()
