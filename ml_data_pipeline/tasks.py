@@ -31,7 +31,7 @@ def type(ctx: Context) -> None:
 @task
 def docs(ctx: Context) -> None:
     """Generate HTML documentation with pdoc."""
-    ctx.run("poetry run pdoc src/ml_data_pipeline --output-dir docs --html", pty=True)
+    ctx.run("poetry run pdoc src/ml_data_pipeline -o docs -d google", pty=True)
 
 
 @task
