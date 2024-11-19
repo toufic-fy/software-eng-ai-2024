@@ -1,3 +1,5 @@
+from typing import Any
+
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
@@ -7,7 +9,7 @@ from .base_model import Model
 class DecisionTreeModel(Model):
     """A decision tree model for training and prediction."""
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs: dict[str, Any]) -> None:
         """
         Initializes the DecisionTreeModel with the given parameters.
 
@@ -16,7 +18,7 @@ class DecisionTreeModel(Model):
         """
         self.model = DecisionTreeClassifier(**kwargs)
 
-    def train(self, X: pd.DataFrame, y: pd.Series) -> None:
+    def train(self, X: pd.DataFrame, y: pd.Series[Any]) -> None:
         """
         Trains the decision tree model on the provided data.
 
@@ -26,7 +28,7 @@ class DecisionTreeModel(Model):
         """
         self.model.fit(X, y)
 
-    def predict(self, X: pd.DataFrame) -> pd.Series:
+    def predict(self, X: pd.DataFrame) -> pd.Series[Any]:
         """
         Predicts the target values using the decision tree model.
 
@@ -37,4 +39,5 @@ class DecisionTreeModel(Model):
             pd.Series: The predicted target values.
         """
         predictions = self.model.predict(X)
-        return pd.Series(predictions, index=X.index)
+
+        return pd.Series(predictions, index=X.index, dtype="category")

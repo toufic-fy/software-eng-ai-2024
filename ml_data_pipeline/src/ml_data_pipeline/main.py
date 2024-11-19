@@ -14,7 +14,7 @@ parser.add_argument(
 )
 
 
-def main():
+def main() -> None:
     args = parser.parse_args()
     config = load_config(args.config)
     print("Loaded Configuration:")

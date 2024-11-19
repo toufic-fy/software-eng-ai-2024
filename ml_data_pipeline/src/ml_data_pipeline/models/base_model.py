@@ -1,5 +1,6 @@
 # src/ml_data_pipeline/model/base_model.py
 from abc import ABC, abstractmethod
+from typing import Any
 
 import pandas as pd
 
@@ -8,7 +9,7 @@ class Model(ABC):
     """Abstract base class for models."""
 
     @abstractmethod
-    def train(self, X: pd.DataFrame, y: pd.Series) -> None:
+    def train(self, X: pd.DataFrame, y: pd.Series[Any]) -> None:
         """Trains the model on the provided data.
 
         Args:
@@ -18,7 +19,7 @@ class Model(ABC):
         pass
 
     @abstractmethod
-    def predict(self, X: pd.DataFrame) -> pd.Series:
+    def predict(self, X: pd.DataFrame) -> pd.Series[Any]:
         """Predicts the target values using the model.
 
         Args:

@@ -15,7 +15,7 @@ class DataLoaderConfig(BaseModel):
     file_type: str
 
     @field_validator("file_type")
-    def validate_file_type(cls, value):
+    def validate_file_type(cls, value: str) -> str:
         """Validates the file type.
 
         Args:
@@ -44,7 +44,7 @@ class TransformationConfig(BaseModel):
     scaling_method: str
 
     @field_validator("scaling_method")
-    def validate_scaling_method(cls, value):
+    def validate_scaling_method(cls, value: str) -> str:
         """Validates the scaling method.
 
         Args:
@@ -71,7 +71,7 @@ class ModelConfig(BaseModel):
     type: str
 
     @field_validator("type")
-    def validate_model_type(cls, value):
+    def validate_model_type(cls, value: str) -> str:
         """Validates the model type.
 
         Args:
