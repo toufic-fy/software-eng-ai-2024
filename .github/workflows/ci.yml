@@ -25,9 +25,9 @@ jobs: # Define the jobs that run in the workflow
       - name: Install dependencies
         run: poetry install
       - name: Run Tests
-        run: poetry run pytest tests/
+        run: poetry run invoke test
       - name: Run Linting
-        run: poetry run riff check src/ tasks.py tests/
+        run: poetry run invoke lint
       - name: Run Typing Checks
-        run: poetry run mypy src/ tasks.py tests/
+        run: poetry run invoke type
       
