@@ -3,9 +3,11 @@ on: # Defines the events that trigger the workflow
   push: # Trigger the workflow on pushes to specific branches
     branches:
       - main
+      - master
   pull_request: # Trigger the workflow on pull requests to specific branches
     branches:
       - main
+      - master
 
 jobs: # Define the jobs that run in the workflow
   test: # The name of the job
@@ -13,15 +15,8 @@ jobs: # Define the jobs that run in the workflow
     steps: # Define the steps that run in the job
       - name: Checkout code # The name of the step
         uses: actions/checkout@v2 # The action to use
-      - name: Install Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Run tests
-        run: npm test
-      - name: Install Poetry
-        run: pipx install poetry
-        shell: bash
+      - name: Project Setup
+        uses: ./.github/actions/setup # Use the setup action from the repository
       - name: Install dependencies
         run: poetry install
       - name: Run Tests
