@@ -1,13 +1,28 @@
 # Use an official Python runtime as the base image
-FROM python:3.12
+FROM python:3.12-slim
+
 # Set the working directory
 WORKDIR /app
-# Copy project files
+
+# Install pipx and Poetry in a single layer
+RUN pip install --no-cache-dir pipx && \
+  pipx install poetry && \
+  ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+
+# Copy only dependency files first to leverage Docker's caching
+COPY poetry.lock pyproject.toml /app/
+
+# Install dependencies with Poetry
+RUN poetry install --no-root --no-cache
+
+# Copy the rest of the project files
 COPY . /app
-# Install Poetry and dependencies
-RUN pip install pipx && pipx install poetry
-RUN ln -s /root/.local/bin/poetry /usr/local/bin/poetry && poetry install
+
+# Explicitly install the project in editable mode
+RUN poetry run pip install -e .
+
 # Expose the port FastAPI will run on
 EXPOSE 8000
+
 # Command to run the FastAPI app
-CMD ["poetry", "run", "uvicorn", "ml_data_pipeline.main:app"]
+CMD ["poetry", "run", "uvicorn", "src.ml_data_pipeline.main:app", "--host","0.0.0.0", "--port", "8000"]
