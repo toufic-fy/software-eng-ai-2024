@@ -8,7 +8,6 @@ from ml_data_pipeline.config import load_config
 from ml_data_pipeline.data_loader import DataLoaderFactory
 from ml_data_pipeline.data_transformer import TransformerFactory
 from ml_data_pipeline.models.factory import ModelFactory
-from pathlib import Path
 
 logger.add("logs/training.log", rotation="500 MB")
 parser = argparse.ArgumentParser(
@@ -16,15 +15,8 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument("--config", type=str, required=True, help="Path to the configuration YAML file.")
 
-def main() -> None:
-    logger.info("Parsing command line arguments.")
-    args = parser.parse_args()
-    logger.debug(f"Command line arguments: {args}.")
-    logger.info("Loading configuration.")
-    config = load_config(args.config)
-    logger.info("Loaded configuration successfully.")
-    logger.debug(f"Configuration: {config}")
-    # Initialize MLflow
+def train(config):
+     # Initialize MLflow
     mlflow.set_tracking_uri(config.mlflow.tracking_uri)
     mlflow.set_experiment(config.mlflow.experiment_name)
     mlflow.autolog()
@@ -50,7 +42,7 @@ def main() -> None:
             X, y, test_size=0.2, random_state=42
             )
             # Train the model
-            model = ModelFactory.get_model(config.model)
+            model = ModelFactory.get_model(config.model.type)
             model.train(X_train, y_train)
             # Evaluate and log metrics
             y_pred = model.predict(X_test)
@@ -61,6 +53,15 @@ def main() -> None:
             logger.error(f"Training failed: {e}")
             raise
 
+def main() -> None:
+    logger.info("Parsing command line arguments.")
+    args = parser.parse_args()
+    logger.debug(f"Command line arguments: {args}.")
+    logger.info("Loading configuration.")
+    config = load_config(args.config)
+    logger.info("Loaded configuration successfully.")
+    logger.debug(f"Configuration: {config}")
+    train(config)
+
 if __name__ == "__main__":
-    print(Path(__file__).resolve())
     main()
