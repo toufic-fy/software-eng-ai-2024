@@ -28,7 +28,7 @@ async def predict(request: PredictionRequest) -> dict[str, str]:
 @app.get("/train")
 async def train_model(config_path: str, background_tasks: BackgroundTasks) -> dict[str, str]:
     try:
-        background_tasks.train_model_background(config_path)
+        background_tasks.add_task(train_model_background, config_path)
         return {"status": "success"}
     except Exception:
         return {"status": "error while training!"}
