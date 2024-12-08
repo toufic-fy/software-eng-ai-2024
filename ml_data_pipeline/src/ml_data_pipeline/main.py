@@ -1,29 +1,18 @@
-from fastapi import BackgroundTasks, FastAPI
-from pydantic import BaseModel
+from fastapi import FastAPI
+from prometheus_fastapi_instrumentator import Instrumentator
 
-from ml_data_pipeline.config import load_config
-from ml_data_pipeline.models import ModelFactory
-from ml_data_pipeline.train import train
+from ml_data_pipeline.endpoints.health import router as health_router
+from ml_data_pipeline.endpoints.pipeline import router as pipeline_router
+from ml_data_pipeline.endpoints.train import router as train_router
 
 app = FastAPI(title="ML Data Pipeline API", version="1.0")
-# Define a request schema
-class PredictionRequest(BaseModel):
-    feature1: float
-    feature2: float
-    feature3: float
 
-@app.get("/health")
-async def health_check() -> dict[str, str]:
-    return {"status": "healthy"}
+Instrumentator().instrument(app).expose(app)
 
-# Define a prediction route
-@app.post("/predict")
-async def predict(request: PredictionRequest) -> dict[str, str]:
-    # Load your model (if not already loaded globally)
-    model = ModelFactory.get_model("tree")
-    features = [request.feature1, request.feature2, request.feature3]
-    prediction = model.predict(features)
-    return {"prediction": prediction}
+# Include API routes
+app.include_router(health_router, prefix="/api", tags=["Health"])
+app.include_router(pipeline_router, prefix="/api", tags=["Pipeline"])
+app.include_router(train_router, prefix="/api", tags=["Train"])
 
 @app.get("/train")
 async def train_model(config_path: str, background_tasks: BackgroundTasks) -> dict[str, str]:
@@ -40,5 +29,4 @@ def train_model_background(config_path: str) -> None:
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
-    # config = load_config("config/config_dev.yaml")
-    # print(config.mlflow)
+    
