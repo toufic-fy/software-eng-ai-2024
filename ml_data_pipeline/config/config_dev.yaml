@@ -6,3 +6,6 @@ transformation:
   scaling_method: "minmax"
 model:
   type: "tree" # Options: "linear" or "tree"
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "ml_data_pipeline_experiments"
