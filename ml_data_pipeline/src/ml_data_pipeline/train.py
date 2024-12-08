@@ -6,7 +6,7 @@ from loguru import logger
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-from ml_data_pipeline.config import load_config
+from ml_data_pipeline.config import Config, load_config
 from ml_data_pipeline.data_loader import DataLoaderFactory
 from ml_data_pipeline.data_transformer import TransformerFactory
 from ml_data_pipeline.models.factory import ModelFactory
@@ -17,7 +17,7 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument("--config", type=str, required=True, help="Path to the configuration YAML file.")
 
-def train(config: str) -> None:
+def train(config: Config) -> None:
      # Initialize MLflow
     mlflow.set_tracking_uri(config.mlflow.tracking_uri)
     mlflow.set_experiment(config.mlflow.experiment_name)
