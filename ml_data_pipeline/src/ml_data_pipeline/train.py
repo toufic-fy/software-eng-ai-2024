@@ -1,9 +1,11 @@
 import argparse
+
 import mlflow
 import mlflow.sklearn
 from loguru import logger
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+
 from ml_data_pipeline.config import load_config
 from ml_data_pipeline.data_loader import DataLoaderFactory
 from ml_data_pipeline.data_transformer import TransformerFactory

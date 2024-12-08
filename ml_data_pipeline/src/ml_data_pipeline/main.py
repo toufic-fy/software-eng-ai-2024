@@ -1,7 +1,8 @@
-from fastapi import FastAPI, BackgroundTasks
+from fastapi import BackgroundTasks, FastAPI
 from pydantic import BaseModel
-from ml_data_pipeline.models import ModelFactory
+
 from ml_data_pipeline.config import load_config
+from ml_data_pipeline.models import ModelFactory
 from ml_data_pipeline.train import train
 
 app = FastAPI(title="ML Data Pipeline API", version="1.0")
