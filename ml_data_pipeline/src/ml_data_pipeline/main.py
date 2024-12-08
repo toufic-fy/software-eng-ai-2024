@@ -18,7 +18,7 @@ async def health_check() -> dict[str, str]:
 
 # Define a prediction route
 @app.post("/predict")
-async def predict(request: PredictionRequest):
+async def predict(request: PredictionRequest) -> dict[str, str]:
     # Load your model (if not already loaded globally)
     model = ModelFactory.get_model("tree")
     features = [request.feature1, request.feature2, request.feature3]
@@ -26,14 +26,14 @@ async def predict(request: PredictionRequest):
     return {"prediction": prediction}
 
 @app.get("/train")
-async def train_model(config_path: str, background_tasks: BackgroundTasks):
+async def train_model(config_path: str, background_tasks: BackgroundTasks) -> dict[str, str]:
     try:
         background_tasks.train_model_background(config_path)
         return {"status": "success"}
     except Exception:
         return {"status": "error while training!"}
 
-def train_model_background(config_path):
+def train_model_background(config_path: str) -> None:
         config = load_config(config_path)
         train(config)
 
