@@ -8,7 +8,6 @@ from ml_data_pipeline.endpoints.train import router as train_router
 app = FastAPI(title="ML Data Pipeline API", version="1.0")
 
 Instrumentator().instrument(app).expose(app)
-# Define a request schema
 
 # Include API routes
 app.include_router(health_router, prefix="/api", tags=["Health"])
