@@ -18,14 +18,19 @@ jobs: # Define the jobs that run in the workflow
     steps: # Define the steps that run in the job
       - name: Checkout code # The name of the step
         uses: actions/checkout@v2 # The action to use
+
       - name: Project Setup
         uses: ./.github/actions/setup # Use the setup action from the repository
+
       - name: Install dependencies
         run: poetry install
+
       - name: Run Tests
         run: poetry run invoke test
+
       - name: Run Linting
         run: poetry run invoke lint
+        
       - name: Run Typing Checks
         run: poetry run invoke type
       
